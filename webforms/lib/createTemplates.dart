@@ -5,46 +5,38 @@ void main() => runApp(const createTemplates());
 class createTemplates extends StatelessWidget {
   const createTemplates({Key? key}) : super(key: key);
 
-  static const String _title = 'Create Form Template';
+  static const String _title = 'Form template';
 
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
       title: _title,
-      home: MyCustomForm(),
+      home: MyStatefulWidget(),
     );
   }
 }
 
-// Define a custom Form widget.
-class MyCustomForm extends StatefulWidget {
-  const MyCustomForm({super.key});
+class MyStatefulWidget extends StatefulWidget {
+  const MyStatefulWidget({Key? key}) : super(key: key);
 
   @override
-  MyCustomFormState createState() {
-    return MyCustomFormState();
-  }
+  State<MyStatefulWidget> createState() => _MyStatefulWidgetState();
 }
 
-// Define a corresponding State class.
-// This class holds data related to the form.
-class MyCustomFormState extends State<MyCustomForm> {
-  // Create a global key that uniquely identifies the Form widget
-  // and allows validation of the form.
-  //
-  // Note: This is a `GlobalKey<FormState>`,
-  // not a GlobalKey<MyCustomFormState>.
-  final _formKey = GlobalKey<FormState>();
+class _MyStatefulWidgetState extends State<MyStatefulWidget> {
+  int _count = 0;
 
   @override
   Widget build(BuildContext context) {
-    // Build a Form widget using the _formKey created above.
-    return Form(
-      key: _formKey,
-      child: Column(
-        children: <Widget>[
-          // Add TextFormFields and ElevatedButton here.
-        ],
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Create New Form Template'),
+      ),
+      body: Center(child: Text('You have pressed the button $_count times.')),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => setState(() => _count++),
+        tooltip: 'Increment Counter',
+        child: const Icon(Icons.add),
       ),
     );
   }
