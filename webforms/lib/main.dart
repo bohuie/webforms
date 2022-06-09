@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:drift/drift.dart';
+import 'forms.dart';
+import 'login.dart';
 
 
 
 void main() async{
+  
  
   runApp( MyApp());
 
@@ -11,18 +15,42 @@ void main() async{
 }
 
 class MyApp extends StatelessWidget {
-  MyApp({super.key});
-
-
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(appBar: AppBar(
-        backgroundColor: Colors.green,
+      home: MyHomePage()
+    );
+  }
+}
+
+
+class MyHomePage extends StatefulWidget {
+  MyHomePage({super.key});
+
+  @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(appBar: AppBar( 
         centerTitle: true,
         title: const Text('View Forms'),
+        actions: <Widget>[ ElevatedButton(
+          child: Text('Login'),
+          onPressed: () {
+            navigate2(context);
+          },
+          style: ElevatedButton.styleFrom(primary: Colors.green),
+        ),
+        ]
+
   
       ),
         body: Center(child: const TableWidget(),)
@@ -31,41 +59,8 @@ class MyApp extends StatelessWidget {
       );
     
   }
-}
-
-class TableWidget extends StatelessWidget {
-  const TableWidget({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return DataTable(
-      columns: const <DataColumn>[
-        DataColumn(label: Text('Form Name')),
-        DataColumn(label: Text('Actions')),
-        DataColumn(label: Text(''))
-      ],
-      rows: [
-        DataRow(cells: [
-          DataCell(Text('Form 1')),
-          DataCell(ElevatedButton(child: Text('Download'), onPressed: () {})),
-          DataCell(ElevatedButton(child: Text('Fill Form'), onPressed: () {}, style: ElevatedButton.styleFrom(primary: Colors.orange)))
-        ]),
-        DataRow(cells: [
-          DataCell(Text('Form 2')),
-          DataCell(ElevatedButton(child: Text('Download'), onPressed: () {})),
-          DataCell(ElevatedButton(child: Text('Fill Form'), onPressed: () {}, style: ElevatedButton.styleFrom(primary: Colors.orange)))
-        ]),
-        DataRow(cells: [
-          DataCell(Text('Form 3')),
-          DataCell(ElevatedButton(child: Text('Download'), onPressed: () {})),
-          DataCell(ElevatedButton(child: Text('Fill Form'), onPressed: () {}, style: ElevatedButton.styleFrom(primary: Colors.orange)))
-        ]),
-        DataRow(cells: [
-          DataCell(Text('Form 4')),
-          DataCell(ElevatedButton(child: Text('Download'), onPressed: () {})),
-          DataCell(ElevatedButton(child: Text('Fill Form'), onPressed: () {}, style: ElevatedButton.styleFrom(primary: Colors.orange)))
-        ]),
-      ],
-    );
+  void navigate2(BuildContext context) {
+    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => login()));
   }
+
 }
