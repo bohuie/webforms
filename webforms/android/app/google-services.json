@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "755064983715",
+    "project_id": "webformstest-a80a0",
+    "storage_bucket": "webformstest-a80a0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:755064983715:android:effdbc3347a28da1152f16",
+        "android_client_info": {
+          "package_name": "com.example.webforms"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "755064983715-i22r7t8il25e0563ffe8hdddimjes3aa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAkYk5U7xC8HuTHckb_16E-XYU4m6g6kcc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "755064983715-i22r7t8il25e0563ffe8hdddimjes3aa.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
