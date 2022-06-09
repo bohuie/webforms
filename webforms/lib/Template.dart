@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'createTemplates.dart';
 
 class templatePage extends StatelessWidget {
   const templatePage({super.key});
@@ -20,9 +21,13 @@ class CreateButton extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        ElevatedButton(child: Text('Create Your Own Template'), onPressed: () {}, style: ElevatedButton.styleFrom(primary: Colors.blue))
+        Spacer(),
+        ElevatedButton(child: Text('Create Your Own Template'), onPressed: () {navigate(context);}, style: ElevatedButton.styleFrom(primary: Colors.blue))
       ],
     );
+  }
+    void navigate(BuildContext context) {
+    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => createTemplates()));
   }
 }
 
