@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:webforms/ManageAccount.dart';
 import 'forms.dart';
+import 'Template.dart';
+import 'manageForm.dart';
 
 class LoggedInPage extends StatefulWidget {
   LoggedInPage({super.key});
@@ -25,14 +27,11 @@ class _LoggedInPageState extends State<LoggedInPage> {
         ),
   
       ),
-        body: TabBarView(
-              children: [
-                ManageAccounts(),
-                Text(''),
-                TableWidget(),
-              ],
-            )
-
+        body: TabBarView(children: [
+          ManageAccounts(),
+          templatePage(),
+          submitB(),
+        ],)
         )
       );
     
