@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:webforms/ManageAccount.dart';
 import 'forms.dart';
 
 class LoggedInPage extends StatefulWidget {
@@ -24,7 +25,13 @@ class _LoggedInPageState extends State<LoggedInPage> {
         ),
   
       ),
-        body: Center(child: const TableWidget(),)
+        body: TabBarView(
+              children: [
+                ManageAccounts(),
+                Text(''),
+                TableWidget(),
+              ],
+            )
 
         )
       );
