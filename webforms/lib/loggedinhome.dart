@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:webforms/ManageAccount.dart';
 import 'forms.dart';
 import 'Template.dart';
 import 'manageForm.dart';
@@ -27,7 +28,7 @@ class _LoggedInPageState extends State<LoggedInPage> {
   
       ),
         body: TabBarView(children: [
-          Text(''),
+          ManageAccounts(),
           templatePage(),
           submitB(),
         ],)
