@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:webforms/ManageAccount.dart';
+import 'package:webforms/main.dart';
 import 'forms.dart';
 import 'Template.dart';
 import 'manageForm.dart';
@@ -25,6 +26,11 @@ class _LoggedInPageState extends State<LoggedInPage> {
             Tab(text: 'Forms')
           ],
         ),
+        leading: IconButton (
+          icon: Icon(Icons.logout),
+          onPressed: () {
+            navigatelogout(context);
+          })
   
       ),
         body: TabBarView(children: [
@@ -35,5 +41,8 @@ class _LoggedInPageState extends State<LoggedInPage> {
         )
       );
     
+  }
+  void navigatelogout(BuildContext context) {
+    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => MyApp()));
   }
 }

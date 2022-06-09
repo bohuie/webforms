@@ -44,7 +44,7 @@ class _MyHomePageState extends State<MyHomePage> {
         actions: <Widget>[ ElevatedButton(
           child: Text('Login'),
           onPressed: () {
-            navigate2(context);
+            navigatelogin(context);
           },
           style: ElevatedButton.styleFrom(primary: Colors.green),
         ),
@@ -58,7 +58,7 @@ class _MyHomePageState extends State<MyHomePage> {
       );
     
   }
-  void navigate2(BuildContext context) {
+  void navigatelogin(BuildContext context) {
     Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => login()));
   }
 
