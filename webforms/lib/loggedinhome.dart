@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'forms.dart';
+import 'Template.dart';
 
 class LoggedInPage extends StatefulWidget {
   LoggedInPage({super.key});
@@ -24,8 +25,11 @@ class _LoggedInPageState extends State<LoggedInPage> {
         ),
   
       ),
-        body: Center(child: const TableWidget(),)
-
+        body: TabBarView(children: [
+          Text(''),
+          templatePage(),
+          TableWidget(),
+        ],)
         )
       );
     
