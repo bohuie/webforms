@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'createTemplates.dart';
+import 'editTemplate.dart';
+import 'viewTemplate.dart';
 
 class templatePage extends StatelessWidget {
   const templatePage({super.key});
@@ -47,48 +49,54 @@ class TemplateTable extends StatelessWidget {
       rows: [
         DataRow(cells: [
           DataCell(Text('Template 1')),
-          DataCell(ElevatedButton(child: Text('View'), onPressed: () {}, style: ElevatedButton.styleFrom(primary: Colors.blue))),
+          DataCell(ElevatedButton(child: Text('View'), onPressed: () {navigateView(context);}, style: ElevatedButton.styleFrom(primary: Colors.blue))),
           DataCell(ElevatedButton(child: Text('Remove Templates'), onPressed: () {}, style: ElevatedButton.styleFrom(primary: Colors.orange))),
-          DataCell(ElevatedButton(child: Text('Edit'), onPressed: () {}, style: ElevatedButton.styleFrom(primary: Colors.lightGreen))),
+          DataCell(ElevatedButton(child: Text('Edit'), onPressed: () {navigateEdit(context);}, style: ElevatedButton.styleFrom(primary: Colors.lightGreen))),
           DataCell(ElevatedButton(child: Text('Duplicate'), onPressed: () {}, style: ElevatedButton.styleFrom(primary: Colors.lightBlue)))
         ]),
         DataRow(cells: [
           DataCell(Text('Template 2')),
-          DataCell(ElevatedButton(child: Text('View'), onPressed: () {}, style: ElevatedButton.styleFrom(primary: Colors.blue))),
+          DataCell(ElevatedButton(child: Text('View'), onPressed: () {navigateView(context);}, style: ElevatedButton.styleFrom(primary: Colors.blue))),
           DataCell(ElevatedButton(child: Text('Remove Templates'), onPressed: () {}, style: ElevatedButton.styleFrom(primary: Colors.orange))),
-          DataCell(ElevatedButton(child: Text('Edit'), onPressed: () {}, style: ElevatedButton.styleFrom(primary: Colors.lightGreen))),
+          DataCell(ElevatedButton(child: Text('Edit'), onPressed: () {navigateEdit(context);}, style: ElevatedButton.styleFrom(primary: Colors.lightGreen))),
           DataCell(ElevatedButton(child: Text('Duplicate'), onPressed: () {}, style: ElevatedButton.styleFrom(primary: Colors.lightBlue)))
         ]),
         DataRow(cells: [
           DataCell(Text('Template 3')),
-          DataCell(ElevatedButton(child: Text('View'), onPressed: () {}, style: ElevatedButton.styleFrom(primary: Colors.blue))),
+          DataCell(ElevatedButton(child: Text('View'), onPressed: () {navigateView(context);}, style: ElevatedButton.styleFrom(primary: Colors.blue))),
           DataCell(ElevatedButton(child: Text('Remove Templates'), onPressed: () {}, style: ElevatedButton.styleFrom(primary: Colors.orange))),
-          DataCell(ElevatedButton(child: Text('Edit'), onPressed: () {}, style: ElevatedButton.styleFrom(primary: Colors.lightGreen))),
+          DataCell(ElevatedButton(child: Text('Edit'), onPressed: () {navigateEdit(context);}, style: ElevatedButton.styleFrom(primary: Colors.lightGreen))),
           DataCell(ElevatedButton(child: Text('Duplicate'), onPressed: () {}, style: ElevatedButton.styleFrom(primary: Colors.lightBlue)))
         ]),
         DataRow(cells: [
           DataCell(Text('Template 4')),
-          DataCell(ElevatedButton(child: Text('View'), onPressed: () {}, style: ElevatedButton.styleFrom(primary: Colors.blue))),
+          DataCell(ElevatedButton(child: Text('View'), onPressed: () {navigateView(context);}, style: ElevatedButton.styleFrom(primary: Colors.blue))),
           DataCell(ElevatedButton(child: Text('Remove Templates'), onPressed: () {}, style: ElevatedButton.styleFrom(primary: Colors.orange))),
-          DataCell(ElevatedButton(child: Text('Edit'), onPressed: () {}, style: ElevatedButton.styleFrom(primary: Colors.lightGreen))),
+          DataCell(ElevatedButton(child: Text('Edit'), onPressed: () {navigateEdit(context);}, style: ElevatedButton.styleFrom(primary: Colors.lightGreen))),
           DataCell(ElevatedButton(child: Text('Duplicate'), onPressed: () {}, style: ElevatedButton.styleFrom(primary: Colors.lightBlue)))
         ]),
          DataRow(cells: [
           DataCell(Text('Template 5')),
-          DataCell(ElevatedButton(child: Text('View'), onPressed: () {}, style: ElevatedButton.styleFrom(primary: Colors.blue))),
+          DataCell(ElevatedButton(child: Text('View'), onPressed: () {navigateView(context);}, style: ElevatedButton.styleFrom(primary: Colors.blue))),
           DataCell(ElevatedButton(child: Text('Remove Templates'), onPressed: () {}, style: ElevatedButton.styleFrom(primary: Colors.orange))),
-          DataCell(ElevatedButton(child: Text('Edit'), onPressed: () {}, style: ElevatedButton.styleFrom(primary: Colors.lightGreen))),
+          DataCell(ElevatedButton(child: Text('Edit'), onPressed: () {navigateEdit(context);}, style: ElevatedButton.styleFrom(primary: Colors.lightGreen))),
           DataCell(ElevatedButton(child: Text('Duplicate'), onPressed: () {}, style: ElevatedButton.styleFrom(primary: Colors.lightBlue)))
         ]),
          DataRow(cells: [
           DataCell(Text('Template 6')),
           DataCell(ElevatedButton(child: Text('View'), onPressed: () {}, style: ElevatedButton.styleFrom(primary: Colors.blue))),
           DataCell(ElevatedButton(child: Text('Remove Templates'), onPressed: () {}, style: ElevatedButton.styleFrom(primary: Colors.orange))),
-          DataCell(ElevatedButton(child: Text('Edit'), onPressed: () {}, style: ElevatedButton.styleFrom(primary: Colors.lightGreen))),
+          DataCell(ElevatedButton(child: Text('Edit'), onPressed: () {navigateEdit(context);}, style: ElevatedButton.styleFrom(primary: Colors.lightGreen))),
           DataCell(ElevatedButton(child: Text('Duplicate'), onPressed: () {}, style: ElevatedButton.styleFrom(primary: Colors.lightBlue)))
         ]),
       ],
     );
+  }
+  void navigateEdit(BuildContext context) {
+    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => editTemplate()));
+  }
+  void navigateView(BuildContext context) {
+    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => viewTemplate()));
   }
 }
 

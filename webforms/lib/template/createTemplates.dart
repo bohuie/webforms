@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'Template.dart';
 
 void main() => runApp(const createTemplates());
 
@@ -16,6 +17,7 @@ class createTemplates extends StatelessWidget {
   }
 }
 
+
 class MyStatefulWidget extends StatefulWidget {
   const MyStatefulWidget({Key? key}) : super(key: key);
 
@@ -28,16 +30,14 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Create New Form Template'),
-      ),
-      body: Center(child: Text('You have pressed the button $_count times.')),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () => setState(() => _count++),
-        tooltip: 'Increment Counter',
-        child: const Icon(Icons.add),
-      ),
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        ElevatedButton(child: Text('Back to Template'), onPressed: () {navigate(context);}, style: ElevatedButton.styleFrom(primary: Colors.blue))
+      ],
     );
+  }
+  void navigate(BuildContext context) {
+    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => templatePage()));
   }
 }
