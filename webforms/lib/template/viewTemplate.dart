@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:webforms/loggedinhome.dart';
 
 import 'Template.dart';
 
@@ -15,6 +16,6 @@ class viewTemplate extends StatelessWidget {
     );
   }
   void navigate(BuildContext context) {
-    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => templatePage()));
+    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => LoggedInPage()));
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:webforms/loggedinhome.dart';
 import 'editForm.dart';
 import 'exportForm.dart';
 import 'formPage.dart';
@@ -43,7 +44,7 @@ class publishForm extends StatelessWidget {
 
   void navFormPage(BuildContext context) {
     Navigator.of(context)
-        .push(MaterialPageRoute(builder: (context) => formPage()));
+        .push(MaterialPageRoute(builder: (context) => LoggedInPage()));
   }
 
   void navExport(BuildContext context) {
