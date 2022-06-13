@@ -9,7 +9,7 @@ class emailSender extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.white,
-        body: CenteredView(
+        body: Center(
           child: Column(children: [
             back(), //back button
           ]),
