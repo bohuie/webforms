@@ -24,8 +24,6 @@ class templateList extends StatelessWidget {
         DataColumn(label: Text('Template Name')),
         DataColumn(label: Text('Actions')),
         DataColumn(label: Text('')),
-        DataColumn(label: Text('')),
-        DataColumn(label: Text(''))
       ],
       rows: [
         DataRow(cells: [
