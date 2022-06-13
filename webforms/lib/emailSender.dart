@@ -11,6 +11,7 @@ class emailSender extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [back()], //back button
     );
+
   }
 }
 
