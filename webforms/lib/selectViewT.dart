@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'viewTemplates.dart';
 import 'editForm.dart';
+import 'formPage.dart';
 
 class selectViewT extends StatelessWidget {
   const selectViewT({super.key});
@@ -9,8 +10,31 @@ class selectViewT extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: [templateList()], //back button
+      children: [back(), templateList()], //back button
     );
+  }
+}
+
+class back extends StatelessWidget {
+  const back({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        ElevatedButton(
+            child: Text('Back to "Form Page"'),
+            onPressed: () {
+              navFormPage(context);
+            },
+            style: ElevatedButton.styleFrom(primary: Colors.blue))
+      ],
+    );
+  }
+
+  void navFormPage(BuildContext context) {
+    Navigator.of(context)
+        .pushReplacement(MaterialPageRoute(builder: (context) => formPage()));
   }
 }
 
@@ -24,8 +48,6 @@ class templateList extends StatelessWidget {
         DataColumn(label: Text('Template Name')),
         DataColumn(label: Text('Actions')),
         DataColumn(label: Text('')),
-        DataColumn(label: Text('')),
-        DataColumn(label: Text(''))
       ],
       rows: [
         DataRow(cells: [

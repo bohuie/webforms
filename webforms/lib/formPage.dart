@@ -17,7 +17,7 @@ class formPage extends StatelessWidget {
             create(),
             Expanded(
                 child: Column(
-              children: [templateList()],
+              children: [formList()],
             ))
           ]),
         ));
@@ -31,7 +31,6 @@ class create extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        Spacer(),
         ElevatedButton(
             child: Text('Create a new Form'),
             onPressed: () {
