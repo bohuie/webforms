@@ -21,6 +21,6 @@ class editstaffbutton extends StatelessWidget {
 
   void navigate(BuildContext context) {
     Navigator.of(context).pushReplacement(
-        MaterialPageRoute(builder: (context) => ManageAccounts()));
+        MaterialPageRoute(builder: (context) => LoggedInPage()));
   }
 }

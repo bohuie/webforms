@@ -16,6 +16,6 @@ class editTemplate extends StatelessWidget {
     );
   }
   void navigate(BuildContext context) {
-    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => templatePage()));
+    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => LoggedInPage()));
   }
 }
