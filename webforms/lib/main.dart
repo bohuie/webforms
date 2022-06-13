@@ -59,7 +59,7 @@ class _MyHomePageState extends State<MyHomePage> {
     
   }
   void navigatelogin(BuildContext context) {
-    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => login()));
+    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => Login()));
   }
 
 }
