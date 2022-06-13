@@ -31,7 +31,6 @@ class create extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        Spacer(),
         ElevatedButton(
             child: Text('Create a new Form'),
             onPressed: () {

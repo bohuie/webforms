@@ -7,13 +7,11 @@ class emailSender extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        backgroundColor: Colors.white,
-        body: Center(
-          child: Column(children: [
-            back(), //back button
-          ]),
-        ));
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [back()], //back button
+    );
+
   }
 }
 
