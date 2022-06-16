@@ -34,6 +34,6 @@ class back extends StatelessWidget {
 
   void navFormPage(BuildContext context) {
     Navigator.of(context)
-        .push(MaterialPageRoute(builder: (context) => LoggedInPage(1)));
+        .push(MaterialPageRoute(builder: (context) => LoggedInPage(2)));
   }
 }
