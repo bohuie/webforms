@@ -11,7 +11,6 @@ class viewTemplate extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        ElevatedButton(child: Text('Save'), onPressed: () {}, style: ElevatedButton.styleFrom(primary: Colors.black)),
         ElevatedButton(child: Text('Back to Template'), onPressed: () {navigate(context);}, style: ElevatedButton.styleFrom(primary: Colors.blue))
       ],
     );
