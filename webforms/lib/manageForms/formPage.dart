@@ -275,7 +275,7 @@ class publishedFormList extends StatelessWidget {
         DataRow(cells: [
           DataCell(Text('Form 1')),
           DataCell(ElevatedButton(
-              child: Text('Unpblish'),
+              child: Text('Unpublish'),
               onPressed: () {
                 modalUnpublish(context);
               },
@@ -284,7 +284,7 @@ class publishedFormList extends StatelessWidget {
                 DataRow(cells: [
           DataCell(Text('Form 2')),
           DataCell(ElevatedButton(
-              child: Text('Unpblish'),
+              child: Text('Unpublish'),
               onPressed: () {
                 modalUnpublish(context);
               },
@@ -293,7 +293,7 @@ class publishedFormList extends StatelessWidget {
                 DataRow(cells: [
           DataCell(Text('Form 3')),
           DataCell(ElevatedButton(
-              child: Text('Unpblish'),
+              child: Text('Unpublish'),
               onPressed: () {
                 modalUnpublish(context);
               },
@@ -302,7 +302,7 @@ class publishedFormList extends StatelessWidget {
                 DataRow(cells: [
           DataCell(Text('Form 4')),
           DataCell(ElevatedButton(
-              child: Text('Unpblish'),
+              child: Text('Unpublish'),
               onPressed: () {
                 modalUnpublish(context);
               },
