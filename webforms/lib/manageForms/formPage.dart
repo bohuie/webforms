@@ -33,7 +33,7 @@ class create extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         ElevatedButton(
-            child: Text('View Template'),
+            child: Text('Select and View Template'),
             onPressed: () {
               navSelectViewT(context);
             },
