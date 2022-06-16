@@ -39,6 +39,6 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
     );
   }
   void navigate(BuildContext context) {
-    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => LoggedInPage()));
+    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => LoggedInPage(1)));
   }
 }

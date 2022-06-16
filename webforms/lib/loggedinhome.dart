@@ -6,21 +6,28 @@ import 'formPage.dart';
 
 
 class LoggedInPage extends StatefulWidget {
-  LoggedInPage({super.key});
+  int selectedPage;
+  LoggedInPage(this.selectedPage);
 
   @override
-  State<LoggedInPage> createState() => _LoggedInPageState();
+  State<LoggedInPage> createState() => _LoggedInPageState(selectedPage);
 }
 
 class _LoggedInPageState extends State<LoggedInPage> {
+  var selectedPage;
+  _LoggedInPageState(this.selectedPage);
+
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
+      initialIndex:selectedPage,
         length: 3,
         child: Scaffold(
             appBar: AppBar(
                 centerTitle: true,
                 bottom: TabBar(
+                  isScrollable: true,
+                  indicatorColor: Colors.blue,
                   tabs: [
                     Tab(text: 'Accounts'),
                     Tab(text: 'Templates'),
@@ -33,6 +40,7 @@ class _LoggedInPageState extends State<LoggedInPage> {
                       navigatelogout(context);
                     })),
             body: TabBarView(
+              
               children: [
                 ManageAccounts(),
                 templatePage(),
