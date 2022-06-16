@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:webforms/editstaffaccount.dart';
 import 'createstaffaccounts.dart';
+import 'loggedinhome.dart';
 
 class ManageAccounts extends StatelessWidget {
   const ManageAccounts({super.key});
@@ -27,6 +28,7 @@ class createstaffbutton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         ElevatedButton(
@@ -68,7 +70,7 @@ class formList extends StatelessWidget {
           DataCell(ElevatedButton(
               child: Text('Delete'),
               onPressed: () {
-                //navDeleteAccount(context);
+                modalStaffAccountDeletion(context);
               },
               
               style: ElevatedButton.styleFrom(primary: Colors.green)))
@@ -84,7 +86,7 @@ class formList extends StatelessWidget {
           DataCell(ElevatedButton(
               child: Text('Delete'),
               onPressed: () {
-                //navDeleteAccount(context);
+                modalStaffAccountDeletion(context);
               },
               
               style: ElevatedButton.styleFrom(primary: Colors.green)))
@@ -100,7 +102,7 @@ class formList extends StatelessWidget {
           DataCell(ElevatedButton(
               child: Text('Delete'),
               onPressed: () {
-                //navDeleteAccount(context);
+                modalStaffAccountDeletion(context);
               },
     
               style: ElevatedButton.styleFrom(primary: Colors.green)))
@@ -116,7 +118,7 @@ class formList extends StatelessWidget {
           DataCell(ElevatedButton(
               child: Text('Delete'),
               onPressed: () {
-                //navDeleteAccount(context);
+                modalStaffAccountDeletion(context);
               },
               
               style: ElevatedButton.styleFrom(primary: Colors.green)))
@@ -124,13 +126,41 @@ class formList extends StatelessWidget {
       ],
     );
   }
-void navEditAccount(BuildContext context) {
+ void navEditAccount(BuildContext context) {
     Navigator.of(context)
         .pushReplacement(MaterialPageRoute(builder: (context) => editstaffbutton()));
   }
 
-  void navDeleteAccount(BuildContext context) {
+ void navDeleteAccount(BuildContext context) {
     Navigator.of(context).pushReplacement(
         MaterialPageRoute(builder: (context) => ManageAccounts()));
   }
+
+  void modalStaffAccountDeletion(BuildContext context) {
+    showDialog(
+      context: context,
+        builder: (context) {
+          return AlertDialog(
+            title: Text('Would you like to remove this staff account?'),
+            content: Text('You will delete this account permanently.'),
+            actions: <Widget>[
+              FloatingActionButton(
+                child: Text('Yes'),
+                onPressed: () {navRemoveStaffAccount(context);},
+                ),
+              FloatingActionButton(
+                child: Text('No'),
+                onPressed: () {navRemoveStaffAccount(context);},
+              ),  
+            ]
+          );
+
+        }
+    );
+  }
+
+   void navRemoveStaffAccount(BuildContext context) {
+    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => LoggedInPage(0)));
+  }
+
 }
