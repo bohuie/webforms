@@ -240,6 +240,9 @@ void modalRemove(BuildContext context) {
   void navigate(BuildContext context) {
     Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => LoggedInPage(2)));
   }
+   void navigate1(BuildContext context) {
+    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => LoggedInPage(2)));
+  }
   void navEdit(BuildContext context) {
     Navigator.of(context)
         .pushReplacement(MaterialPageRoute(builder: (context) => editForm()));

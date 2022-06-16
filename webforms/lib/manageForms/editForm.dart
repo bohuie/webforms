@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:webforms/loggedinhome.dart';
+import 'emailSender.dart';
 import 'formPage.dart';
+import 'notification.dart';
 import 'publishForm.dart';
 
 class editForm extends StatelessWidget {
@@ -91,11 +93,17 @@ class defsender extends StatelessWidget {
         ElevatedButton(
             child: Text('Define associated email sender'),
             onPressed: () {
-            //123123  
+            navigate(context); 
             },
             style: ElevatedButton.styleFrom(primary: Colors.blue))
       ],
     );
+  }
+  void navigate(BuildContext context) {
+    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => emailSender()));
+  }
+  void navigate1(BuildContext context) {
+    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => notifications()));
   }
 }
 
