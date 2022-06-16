@@ -35,7 +35,7 @@ class back extends StatelessWidget {
 
   void navFormPage(BuildContext context) {
     Navigator.of(context)
-        .pushReplacement(MaterialPageRoute(builder: (context) => LoggedInPage(1)));
+        .pushReplacement(MaterialPageRoute(builder: (context) => LoggedInPage(2)));
   }
 }
 
