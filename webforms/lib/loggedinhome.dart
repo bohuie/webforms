@@ -34,11 +34,14 @@ class _LoggedInPageState extends State<LoggedInPage> {
                     Tab(text: 'Forms')
                   ],
                 ),
-                leading: IconButton(
-                    icon: Icon(Icons.logout),
-                    onPressed: () {
-                      navigatelogout(context);
-                    })),
+                actions: <Widget>[ ElevatedButton(
+                  child: Text('Logout'),
+                  onPressed: () {
+                    navigatelogout(context);
+                  },
+                  style: ElevatedButton.styleFrom(primary: Colors.red),
+            ),
+            ]),
             body: TabBarView(
               
               children: [
