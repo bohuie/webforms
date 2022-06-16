@@ -18,7 +18,7 @@ class formPage extends StatelessWidget {
             create(),
             Expanded(
                 child: Column(
-              children: [formList()],
+              children: [UnpublishedformList(),publishedFormList()],
             ))
           ]),
         ));
@@ -48,18 +48,18 @@ class create extends StatelessWidget {
   }
 }
 
-class formList extends StatelessWidget {
-  const formList({super.key});
+class UnpublishedformList extends StatelessWidget {
+  const UnpublishedformList({super.key});
 
   @override
   Widget build(BuildContext context) {
     return DataTable(
       columns: const <DataColumn>[
-        DataColumn(label: Text('Form Name')),
+        DataColumn(label: Text('Unpublished Form List')),
         DataColumn(label: Text('Actions')),
         DataColumn(label: Text('')),
         DataColumn(label: Text('')),
-        DataColumn(label: Text(''))
+        DataColumn(label: Text('')),
       ],
       rows: [
         DataRow(cells: [
@@ -76,18 +76,18 @@ class formList extends StatelessWidget {
                 modalDuplicate(context);
               },
               style: ElevatedButton.styleFrom(primary: Colors.orange))),
+              DataCell(ElevatedButton(
+              child: Text('Publish'),
+              onPressed: () {
+                modalPublish(context);
+              },
+              style: ElevatedButton.styleFrom(primary: Colors.green))),
           DataCell(ElevatedButton(
               child: Text('Remove'),
               onPressed: () {
                 modalRemove(context);
               },
-              style: ElevatedButton.styleFrom(primary: Colors.red))),
-          DataCell(ElevatedButton(
-              child: Text('Export'),
-              onPressed: () {
-                navExport(context);
-              },
-              style: ElevatedButton.styleFrom(primary: Colors.green)))
+              style: ElevatedButton.styleFrom(primary: Colors.red)))
         ]),
         DataRow(cells: [
           DataCell(Text('Form 2')),
@@ -103,18 +103,18 @@ class formList extends StatelessWidget {
                 modalDuplicate(context);
               },
               style: ElevatedButton.styleFrom(primary: Colors.orange))),
+              DataCell(ElevatedButton(
+              child: Text('Publish'),
+              onPressed: () {
+                modalPublish(context);
+              },
+              style: ElevatedButton.styleFrom(primary: Colors.green))),
           DataCell(ElevatedButton(
               child: Text('Remove'),
               onPressed: () {
                 modalRemove(context);
               },
-              style: ElevatedButton.styleFrom(primary: Colors.red))),
-          DataCell(ElevatedButton(
-              child: Text('Export'),
-              onPressed: () {
-                navExport(context);
-              },
-              style: ElevatedButton.styleFrom(primary: Colors.green)))
+              style: ElevatedButton.styleFrom(primary: Colors.red)))
         ]),
         DataRow(cells: [
           DataCell(Text('Form 3')),
@@ -130,18 +130,18 @@ class formList extends StatelessWidget {
                 modalDuplicate(context);
               },
               style: ElevatedButton.styleFrom(primary: Colors.orange))),
+              DataCell(ElevatedButton(
+              child: Text('Publish'),
+              onPressed: () {
+                modalDuplicate(context);
+              },
+              style: ElevatedButton.styleFrom(primary: Colors.green))),
           DataCell(ElevatedButton(
               child: Text('Remove'),
               onPressed: () {
-                modalRemove(context);
+                modalPublish(context);
               },
-              style: ElevatedButton.styleFrom(primary: Colors.red))),
-          DataCell(ElevatedButton(
-              child: Text('Export'),
-              onPressed: () {
-                navExport(context);
-              },
-              style: ElevatedButton.styleFrom(primary: Colors.green)))
+              style: ElevatedButton.styleFrom(primary: Colors.red)))
         ]),
         DataRow(cells: [
           DataCell(Text('Form 4')),
@@ -157,18 +157,18 @@ class formList extends StatelessWidget {
                 modalDuplicate(context);
               },
               style: ElevatedButton.styleFrom(primary: Colors.orange))),
+              DataCell(ElevatedButton(
+              child: Text('Publish'),
+              onPressed: () {
+                modalPublish(context);
+              },
+              style: ElevatedButton.styleFrom(primary: Colors.green))),
           DataCell(ElevatedButton(
               child: Text('Remove'),
               onPressed: () {
                 modalRemove(context);
               },
-              style: ElevatedButton.styleFrom(primary: Colors.red))),
-          DataCell(ElevatedButton(
-              child: Text('Export'),
-              onPressed: () {
-                navExport(context);
-              },
-              style: ElevatedButton.styleFrom(primary: Colors.green)))
+              style: ElevatedButton.styleFrom(primary: Colors.red)))
         ]),
       ],
     );
@@ -191,7 +191,27 @@ void modalRemove(BuildContext context) {
               ),  
             ]
           );
-
+        }
+    );
+  }
+  void modalPublish(BuildContext context) {
+    showDialog(
+      context: context,
+        builder: (context) {
+          return AlertDialog(
+            title: Text('Do you want to publish this form template?'),
+            content: Text('This form can be viewed and filled in View Forms by student user.'),
+            actions: <Widget>[
+              FloatingActionButton(
+                child: Text('Yes'),
+                onPressed: () {navigate(context);},
+                ),
+              FloatingActionButton(
+                child: Text('No'),
+                onPressed: () {navigate(context);},
+              ),  
+            ]
+          );
         }
     );
   }
@@ -216,7 +236,7 @@ void modalRemove(BuildContext context) {
         }
     );
   }
-  
+
   void navigate(BuildContext context) {
     Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => LoggedInPage(2)));
   }
@@ -241,4 +261,79 @@ void modalRemove(BuildContext context) {
   }
 }
 
+class publishedFormList extends StatelessWidget {
+  const publishedFormList({super.key});
 
+  @override
+  Widget build(BuildContext context) {
+    return DataTable(
+      columns: const <DataColumn>[
+        DataColumn(label: Text('Published Form List')),
+        DataColumn(label: Text('Actions'))
+        ],
+      rows: [
+        DataRow(cells: [
+          DataCell(Text('Form 1')),
+          DataCell(ElevatedButton(
+              child: Text('Unpblish'),
+              onPressed: () {
+                modalUnpublish(context);
+              },
+              style: ElevatedButton.styleFrom(primary: Colors.red))),
+        ]),
+                DataRow(cells: [
+          DataCell(Text('Form 2')),
+          DataCell(ElevatedButton(
+              child: Text('Unpblish'),
+              onPressed: () {
+                modalUnpublish(context);
+              },
+              style: ElevatedButton.styleFrom(primary: Colors.red))),
+        ]),
+                DataRow(cells: [
+          DataCell(Text('Form 3')),
+          DataCell(ElevatedButton(
+              child: Text('Unpblish'),
+              onPressed: () {
+                modalUnpublish(context);
+              },
+              style: ElevatedButton.styleFrom(primary: Colors.red))),
+        ]),
+                DataRow(cells: [
+          DataCell(Text('Form 4')),
+          DataCell(ElevatedButton(
+              child: Text('Unpblish'),
+              onPressed: () {
+                modalUnpublish(context);
+              },
+              style: ElevatedButton.styleFrom(primary: Colors.red))),
+          ]),
+      ],
+    );
+  }
+  void modalUnpublish(BuildContext context) {
+    showDialog(
+      context: context,
+        builder: (context) {
+          return AlertDialog(
+            title: Text('Do you want to unpublish this form?'),
+            content: Text('If yes, Student user cannot view and fill this form anymore.\n It will return to unpublished form list.'),
+            actions: <Widget>[
+              FloatingActionButton(
+                child: Text('Yes'),
+                onPressed: () {navigate(context);},
+                ),
+              FloatingActionButton(
+                child: Text('No'),
+                onPressed: () {navigate(context);},
+              ),  
+            ]
+          );
+
+        }
+    );
+  }
+  void navigate(BuildContext context) {
+    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => LoggedInPage(2)));
+  }
+}

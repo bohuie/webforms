@@ -10,7 +10,7 @@ class editForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: [back(), defnotification(), defsender(), save(), publish()],
+      children: [back(), defnotification(), defsender(), save()],
     );
   }
 }
