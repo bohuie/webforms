@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../loggedinhome.dart';
 import 'createTemplates.dart';
 import 'editTemplate.dart';
 import 'viewTemplate.dart';
@@ -108,11 +109,11 @@ class TemplateTable extends StatelessWidget {
             actions: <Widget>[
               FloatingActionButton(
                 child: Text('Yes'),
-                onPressed: () {},
+                onPressed: () {navigate(context);},
                 ),
               FloatingActionButton(
                 child: Text('No'),
-                onPressed: () {},
+                onPressed: () {navigate(context);},
               ),  
             ]
           );
@@ -130,19 +131,24 @@ class TemplateTable extends StatelessWidget {
             actions: <Widget>[
               FloatingActionButton(
                 child: Text('Yes'),
-                onPressed: () {},
+                onPressed: () {navigate(context);},
                 ),
               FloatingActionButton(
                 child: Text('No'),
-                onPressed: () {},
+                onPressed: () {navigate(context);},
               ),  
             ]
           );
-
         }
     );
   }
+    void navigate(BuildContext context) {
+    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => LoggedInPage(1)));
+  }
 }
+
+
+
 
 class CenteredView extends StatelessWidget {
   final Widget child;
