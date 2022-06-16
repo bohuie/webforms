@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:webforms/loggedinhome.dart';
-import 'Template.dart';
+import 'TemplatePage.dart';
 
 void main() => runApp(const createTemplates());
 
@@ -35,6 +35,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
+        ElevatedButton(child: Text('Save'), onPressed: () {}, style: ElevatedButton.styleFrom(primary: Colors.black)),
         ElevatedButton(child: Text('Back to Template'), onPressed: () {navigate(context);}, style: ElevatedButton.styleFrom(primary: Colors.blue))
       ],
     );

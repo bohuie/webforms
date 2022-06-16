@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:webforms/loggedinhome.dart';
 
-import 'Template.dart';
+import 'TemplatePage.dart';
 
 class editTemplate extends StatelessWidget {
   const editTemplate({super.key});

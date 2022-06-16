@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:webforms/loggedinhome.dart';
 
-import 'Template.dart';
+import 'TemplatePage.dart';
 
 class viewTemplate extends StatelessWidget {
   const viewTemplate({super.key});
