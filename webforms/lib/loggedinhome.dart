@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:webforms/ManageAccount.dart';
 import 'package:webforms/main.dart';
-import 'template/Template.dart';
-import 'formPage.dart';
+import 'manageTemplate/Template.dart';
+import 'manageForms/formPage.dart';
 
 
 class LoggedInPage extends StatefulWidget {

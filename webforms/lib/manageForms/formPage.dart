@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../loggedinhome.dart';
 import 'selectViewT.dart';
 import 'editForm.dart';
 import 'duplicateForm.dart';
@@ -32,7 +33,7 @@ class create extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         ElevatedButton(
-            child: Text('Create a new Form'),
+            child: Text('View Template'),
             onPressed: () {
               navSelectViewT(context);
             },
@@ -72,13 +73,13 @@ class formList extends StatelessWidget {
           DataCell(ElevatedButton(
               child: Text('Duplicate'),
               onPressed: () {
-                navDuplicate(context);
+                modalDuplicate(context);
               },
               style: ElevatedButton.styleFrom(primary: Colors.orange))),
           DataCell(ElevatedButton(
-              child: Text('Unpublish'),
+              child: Text('Remove'),
               onPressed: () {
-                navUnpublish(context);
+                modalRemove(context);
               },
               style: ElevatedButton.styleFrom(primary: Colors.red))),
           DataCell(ElevatedButton(
@@ -99,13 +100,13 @@ class formList extends StatelessWidget {
           DataCell(ElevatedButton(
               child: Text('Duplicate'),
               onPressed: () {
-                navDuplicate(context);
+                modalDuplicate(context);
               },
               style: ElevatedButton.styleFrom(primary: Colors.orange))),
           DataCell(ElevatedButton(
-              child: Text('Unpublish'),
+              child: Text('Remove'),
               onPressed: () {
-                navUnpublish(context);
+                modalRemove(context);
               },
               style: ElevatedButton.styleFrom(primary: Colors.red))),
           DataCell(ElevatedButton(
@@ -126,13 +127,13 @@ class formList extends StatelessWidget {
           DataCell(ElevatedButton(
               child: Text('Duplicate'),
               onPressed: () {
-                navDuplicate(context);
+                modalDuplicate(context);
               },
               style: ElevatedButton.styleFrom(primary: Colors.orange))),
           DataCell(ElevatedButton(
-              child: Text('Unpublish'),
+              child: Text('Remove'),
               onPressed: () {
-                navUnpublish(context);
+                modalRemove(context);
               },
               style: ElevatedButton.styleFrom(primary: Colors.red))),
           DataCell(ElevatedButton(
@@ -153,13 +154,13 @@ class formList extends StatelessWidget {
           DataCell(ElevatedButton(
               child: Text('Duplicate'),
               onPressed: () {
-                navDuplicate(context);
+                modalDuplicate(context);
               },
               style: ElevatedButton.styleFrom(primary: Colors.orange))),
           DataCell(ElevatedButton(
-              child: Text('Unpublish'),
+              child: Text('Remove'),
               onPressed: () {
-                navUnpublish(context);
+                modalRemove(context);
               },
               style: ElevatedButton.styleFrom(primary: Colors.red))),
           DataCell(ElevatedButton(
@@ -172,7 +173,53 @@ class formList extends StatelessWidget {
       ],
     );
   }
+void modalRemove(BuildContext context) {
+    showDialog(
+      context: context,
+        builder: (context) {
+          return AlertDialog(
+            title: Text('Do you want to remove this form template?'),
+            content: Text('You will delete this template permanently.'),
+            actions: <Widget>[
+              FloatingActionButton(
+                child: Text('Yes'),
+                onPressed: () {navigate(context);},
+                ),
+              FloatingActionButton(
+                child: Text('No'),
+                onPressed: () {navigate(context);},
+              ),  
+            ]
+          );
 
+        }
+    );
+  }
+  void modalDuplicate(BuildContext context) {
+    showDialog(
+      context: context,
+        builder: (context) {
+          return AlertDialog(
+            title: Text('Do you want a dupulicate of this template?'),
+            content: Text('It will make a copy of this template.'),
+            actions: <Widget>[
+              FloatingActionButton(
+                child: Text('Yes'),
+                onPressed: () {navDuplicate(context);},
+                ),
+              FloatingActionButton(
+                child: Text('No'),
+                onPressed: () {navigate(context);},
+              ),  
+            ]
+          );
+        }
+    );
+  }
+  
+  void navigate(BuildContext context) {
+    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => LoggedInPage(2)));
+  }
   void navEdit(BuildContext context) {
     Navigator.of(context)
         .pushReplacement(MaterialPageRoute(builder: (context) => editForm()));
