@@ -11,36 +11,29 @@ class TableWidget extends StatelessWidget {
       columns: const <DataColumn>[
         DataColumn(label: Text('Form Name')),
         DataColumn(label: Text('Actions')),
-        DataColumn(label: Text(''))
+        
       ],
       rows: [
         DataRow(cells: [
           DataCell(Text('Form 1')),
-          DataCell(ElevatedButton(child: Text('Download'), onPressed: () {navdownload(context);})),
           DataCell(ElevatedButton(child: Text('Fill Form'), onPressed: () {navfillform(context);}, style: ElevatedButton.styleFrom(primary: Colors.orange)))
         ]),
         DataRow(cells: [
           DataCell(Text('Form 2')),
-          DataCell(ElevatedButton(child: Text('Download'), onPressed: () {navdownload(context);})),
           DataCell(ElevatedButton(child: Text('Fill Form'), onPressed: () {navfillform(context);}, style: ElevatedButton.styleFrom(primary: Colors.orange)))
         ]),
         DataRow(cells: [
           DataCell(Text('Form 3')),
-          DataCell(ElevatedButton(child: Text('Download'), onPressed: () {navdownload(context);})),
           DataCell(ElevatedButton(child: Text('Fill Form'), onPressed: () {navfillform(context);}, style: ElevatedButton.styleFrom(primary: Colors.orange)))
         ]),
         DataRow(cells: [
           DataCell(Text('Form 4')),
-          DataCell(ElevatedButton(child: Text('Download'), onPressed: () {navdownload(context);})),
           DataCell(ElevatedButton(child: Text('Fill Form'), onPressed: () {navfillform(context);}, style: ElevatedButton.styleFrom(primary: Colors.orange)))
         ]),
       ],
     );
   }
 
-  void navdownload(BuildContext context) {
-    Navigator.of(context).push(MaterialPageRoute(builder: (context) => downloadPage()));
-  }
 
   void navfillform(BuildContext context) {
     Navigator.of(context).push(MaterialPageRoute(builder: (context) => fillForm()));
