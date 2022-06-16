@@ -24,7 +24,6 @@ class CreateButton extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        Spacer(),
         ElevatedButton(child: Text('Create Your Own Template'), onPressed: () {navigate(context);}, style: ElevatedButton.styleFrom(primary: Colors.blue))
       ],
     );
