@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:webforms/ManageAccount.dart';
 import 'package:webforms/main.dart';
-import 'manageTemplate/Template.dart';
+import 'manageTemplate/TemplatePage.dart';
 import 'manageForms/formPage.dart';
 
 
