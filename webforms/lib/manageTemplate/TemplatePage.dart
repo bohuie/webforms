@@ -24,7 +24,7 @@ class CreateButton extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        ElevatedButton(child: Text('Create Form Template'), onPressed: () {navigate(context);}, style: ElevatedButton.styleFrom(primary: Colors.blue))
+        ElevatedButton(child: Text('Create a new Template'), onPressed: () {navigate(context);}, style: ElevatedButton.styleFrom(primary: Colors.blue))
       ],
     );
   }
@@ -50,30 +50,30 @@ class TemplateTable extends StatelessWidget {
         DataRow(cells: [
           DataCell(Text('Template 1')),
           DataCell(ElevatedButton(child: Text('View'), onPressed: () {navigateView(context);}, style: ElevatedButton.styleFrom(primary: Colors.blue))),
-          DataCell(ElevatedButton(child: Text('Remove'), onPressed: () {modalRemove(context);}, style: ElevatedButton.styleFrom(primary: Colors.orange))),
           DataCell(ElevatedButton(child: Text('Edit'), onPressed: () {navigateEdit(context);}, style: ElevatedButton.styleFrom(primary: Colors.lightGreen))),
-          DataCell(ElevatedButton(child: Text('Duplicate'), onPressed: () {modalDuplicate(context);}, style: ElevatedButton.styleFrom(primary: Colors.lightBlue)))
+          DataCell(ElevatedButton(child: Text('Duplicate'), onPressed: () {modalDuplicate(context);}, style: ElevatedButton.styleFrom(primary: Colors.lightBlue))),
+          DataCell(ElevatedButton(child: Text('Remove'), onPressed: () {modalRemove(context);}, style: ElevatedButton.styleFrom(primary: Colors.red)))
         ]),
         DataRow(cells: [
           DataCell(Text('Template 2')),
-          DataCell(ElevatedButton(child: Text('View'), onPressed: () {navigateView(context);}, style: ElevatedButton.styleFrom(primary: Colors.blue))),
-          DataCell(ElevatedButton(child: Text('Remove'), onPressed: () {modalRemove(context);}, style: ElevatedButton.styleFrom(primary: Colors.orange))),
+                    DataCell(ElevatedButton(child: Text('View'), onPressed: () {navigateView(context);}, style: ElevatedButton.styleFrom(primary: Colors.blue))),
           DataCell(ElevatedButton(child: Text('Edit'), onPressed: () {navigateEdit(context);}, style: ElevatedButton.styleFrom(primary: Colors.lightGreen))),
-          DataCell(ElevatedButton(child: Text('Duplicate'), onPressed: () {modalDuplicate(context);}, style: ElevatedButton.styleFrom(primary: Colors.lightBlue)))
+          DataCell(ElevatedButton(child: Text('Duplicate'), onPressed: () {modalDuplicate(context);}, style: ElevatedButton.styleFrom(primary: Colors.lightBlue))),
+          DataCell(ElevatedButton(child: Text('Remove'), onPressed: () {modalRemove(context);}, style: ElevatedButton.styleFrom(primary: Colors.red)))
         ]),
         DataRow(cells: [
           DataCell(Text('Template 3')),
-          DataCell(ElevatedButton(child: Text('View'), onPressed: () {navigateView(context);}, style: ElevatedButton.styleFrom(primary: Colors.blue))),
-          DataCell(ElevatedButton(child: Text('Remove'), onPressed: () {modalRemove(context);}, style: ElevatedButton.styleFrom(primary: Colors.orange))),
+                    DataCell(ElevatedButton(child: Text('View'), onPressed: () {navigateView(context);}, style: ElevatedButton.styleFrom(primary: Colors.blue))),
           DataCell(ElevatedButton(child: Text('Edit'), onPressed: () {navigateEdit(context);}, style: ElevatedButton.styleFrom(primary: Colors.lightGreen))),
-          DataCell(ElevatedButton(child: Text('Duplicate'), onPressed: () {modalDuplicate(context);}, style: ElevatedButton.styleFrom(primary: Colors.lightBlue)))
+          DataCell(ElevatedButton(child: Text('Duplicate'), onPressed: () {modalDuplicate(context);}, style: ElevatedButton.styleFrom(primary: Colors.lightBlue))),
+          DataCell(ElevatedButton(child: Text('Remove'), onPressed: () {modalRemove(context);}, style: ElevatedButton.styleFrom(primary: Colors.red)))
         ]),
         DataRow(cells: [
           DataCell(Text('Template 4')),
-          DataCell(ElevatedButton(child: Text('View'), onPressed: () {navigateView(context);}, style: ElevatedButton.styleFrom(primary: Colors.blue))),
-          DataCell(ElevatedButton(child: Text('Remove'), onPressed: () {modalRemove(context);}, style: ElevatedButton.styleFrom(primary: Colors.orange))),
+                    DataCell(ElevatedButton(child: Text('View'), onPressed: () {navigateView(context);}, style: ElevatedButton.styleFrom(primary: Colors.blue))),
           DataCell(ElevatedButton(child: Text('Edit'), onPressed: () {navigateEdit(context);}, style: ElevatedButton.styleFrom(primary: Colors.lightGreen))),
-          DataCell(ElevatedButton(child: Text('Duplicate'), onPressed: () {modalDuplicate(context);}, style: ElevatedButton.styleFrom(primary: Colors.lightBlue)))
+          DataCell(ElevatedButton(child: Text('Duplicate'), onPressed: () {modalDuplicate(context);}, style: ElevatedButton.styleFrom(primary: Colors.lightBlue))),
+          DataCell(ElevatedButton(child: Text('Remove'), onPressed: () {modalRemove(context);}, style: ElevatedButton.styleFrom(primary: Colors.red)))
         ]),
       ],
     );
