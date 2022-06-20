@@ -29,7 +29,7 @@ class CreateButton extends StatelessWidget {
     );
   }
     void navigate(BuildContext context) {
-    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => createTemplates()));
+    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => createTemplatePage()));
   }
 }
 
@@ -79,7 +79,7 @@ class TemplateTable extends StatelessWidget {
     );
   }
   void navigateEdit(BuildContext context) {
-    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => editTemplate()));
+    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => editTemplatePage()));
   }
   void navigateView(BuildContext context) {
     Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => viewTemplate()));
